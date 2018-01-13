@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/server")
 public class HelloController {
 
+
     @RequestMapping(value = "/status",method = RequestMethod.GET)
     public String ServerHealthy(){
-        return "I am eureka Service I'm healthy is ok ...";
+        return "I am eureka Client I'm healthy is ok ...";
     }
+
 }

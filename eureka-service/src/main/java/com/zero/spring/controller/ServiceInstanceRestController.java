@@ -22,4 +22,9 @@ public class ServiceInstanceRestController {
     public List<String> getServerList(){
         return discoveryClient.getServices();
     }
+
+    @RequestMapping("/info")
+    public String info(){
+        return discoveryClient.description();
+    }
 }
