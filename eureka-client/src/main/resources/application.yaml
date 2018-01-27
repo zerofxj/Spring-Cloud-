@@ -1,9 +1,9 @@
 server:
   port: 8701
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
 spring:
   application:
-    name: zero-j-01
+    registry: http://localhost:8761
+
+#spring:
+#  application:
+#    name: zero-j-01

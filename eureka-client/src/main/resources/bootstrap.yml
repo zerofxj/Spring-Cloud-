@@ -1,0 +1,39 @@
+server:
+  dsaddress: 0.0.0.0
+  contextPath: /
+  compression:
+    enabled: true
+  tomcat:
+    backgroundProcessorDelay: 30
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: ZERO.eureka.client
+  jpa:
+    hibernate:
+#      "none", "validate", "update", "create", "create-drop"
+      ddl-auto: none
+    database: ORACLE
+  datasource:
+    druid:
+      max-active: 50
+      min-idle: 1
+  jackson:
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+    serialization:
+      ORDER_MAP_ENTRIES_BY_KEYS: true
+      INDENT_OUTPUT: true
+    date-format: yyyy-MM-dd HH:mm:ss
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: ${SPRING_REGISTRY_URI:${spring.application.registry}}/eureka/
+  instance:
+    prefer-ip-address: true
